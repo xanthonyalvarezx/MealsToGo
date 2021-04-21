@@ -6,7 +6,16 @@ import { Avatar, Button, Card, Paragraph } from "react-native-paper";
 
 const Title = styled.Text`
   padding: 10px;
-  color: red;
+  color: black;
+`;
+const RestaurantCard = styled(Card)`
+  box-shadow: 5px 5px 5px;
+  background-color: white;
+  padding: 10px;
+`;
+const RestaurantCardCover = styled(Card.Cover)`
+  background-color: white;
+  padding: 10px;
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -23,22 +32,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   } = restaurant;
 
   return (
-    <Card elevation={1} style={styles.card}>
+    <RestaurantCard elevation={1}>
       <Title>{name}</Title>
-      <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
-    </Card>
+      <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+    </RestaurantCard>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "white",
-    shadowOffset: { width: 10, height: 10 },
-    shadowColor: "black",
-    shadowOpacity: 0.4,
-  },
-  cover: {
-    padding: 15,
-    backgroundColor: "white",
-  },
-});
