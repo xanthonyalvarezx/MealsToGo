@@ -11,13 +11,13 @@ const SafeArea = styled(SafeAreaView)`
   flex: 1;
 `;
 const SearchContainer = styled.View`
-  background-color: #d87213;
-  padding: 10px;
+  background-color: ${(props) => props.theme.colors.brand.secondary};
+  padding: ${(props) => props.theme.space[3]};
 `;
 const ListContainer = styled.View`
   flex: 1;
-  background-color: #2bc475;
-  padding: 10px;
+  background-color: ${(props) => props.theme.colors.brand.primary};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantsScreen = () => {
